@@ -43,5 +43,9 @@ it('Deve fazer login com sucesso - usando Fixture', () => {
        cy.get('.woocommerce-form > .button').click()
        cy.get('.woocommerce-MyAccount-content > :nth-child(2)'). should('contain' , 'Olá, luiz (não é luiz? Sair)' )
     })
-})
+});
+it.only('Deve fazer login com sucesso usando comando customizados', () => {
+    cy.login('luiz@teste.com.br' , 'Leste@123' )
+    cy.get('.woocommerce-MyAccount-content > :nth-child(2)'). should('contain' , 'Olá, luiz (não é luiz? Sair)' )
+});
 })
